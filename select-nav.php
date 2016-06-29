@@ -35,6 +35,7 @@ function select_nav_insert($atts) {
   return wp_nav_menu( array('menu'       => $a['menu'],
 			    'walker'     => new Walker_Nav_Menu_Select(),
 			    'items_wrap' => '<div class="select-nav"><form><select onchange="if(this.value) { window.location.href=this.value; }">%3$s</select></form></div>',
+                'echo' => false,
 			    ) );
 }
 add_shortcode('select_nav', 'select_nav_insert');
